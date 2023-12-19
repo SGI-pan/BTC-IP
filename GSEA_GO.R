@@ -32,7 +32,7 @@ GSEA_symbol_list <- res$log2FC
 names(GSEA_symbol_list) <- res$gene
 GSEA_symbol_list <- sort(GSEA_symbol_list, decreasing = T)
 
-gse_GO <-gseGO(geneList = GSEA_symbol_list,# ont = "BP", maxGSSize = 10000,
-                            keyType = "SYMBOL", #nPerm=10000,
-                            pvalueCutoff = 0.05, verbose = T,
-                            OrgDb = get("org.Hs.eg.db"), pAdjustMethod = "fdr")
+gse_GO <-gseGO(geneList = GSEA_symbol_list,
+               keyType = "SYMBOL", 
+               pvalueCutoff = 0.05, verbose = T,
+               OrgDb = get("org.Hs.eg.db"), pAdjustMethod = "fdr")
